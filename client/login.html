@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LudvigDrive | Login</title>
+
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+	<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css">
+	<link rel="stylesheet" href="/css/style.css" type="text/css">
+	<link rel="stylesheet" href="/css/login.css" type="text/css">
+</head>
+<body>
+<div class="container">
+	<div id="login" class="row">
+		<div class="col-md-12">
+			<form name="loginForm" id="loginForm" class="form-group" method="POST" action="/login">
+				<div id="loginStatusContainer"></div>
+				<div>Username</div>
+				<input name="username" type="text" class="form-control" id="username"autocomplete="off">
+				<div>Password</div>
+				<input name="password" type="password" class="form-control" id="password" autocomplete="off">
+				<div class="button-container">
+					<input type="submit" class="btn btn-primary" id="loginBtn" readonly value="Login">
+					<input type="button" class="btn btn-primary" id="registerBtn" readonly value="Register">
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<script>
+var form = document.getElementById("loginForm");
+
+$("#username").val(localStorage.getItem("username"));
+$('form[name=loginForm]').submit(function(event) {
+    event.preventDefault();
+    console.log(event);
+
+    var form = $(this);
+    var url = form.attr('action');
+
+    $.ajax({
+       type: "POST",
+       url: url,
+       data: form.serialize(), //Attaches the forms data
+       success: function(data) {
+           if (data && data.newURL) location = data.newURL;
+           
+           $("#loginStatusContainer").html(data);
+       }
+ 	});
+});
+
+$("#registerBtn").click(function(event) {
+	const $usernameElem = $("#username");
+	const $passwordElem = $("#password");
+
+	if (!$usernameElem.val() || !$passwordElem.val()) return;
+
+	const xhr = new XMLHttpRequest;
+	const formData = new FormData();
+
+	xhr.open("POST", "/register", true);
+	xhr.onreadystatechange = function() {
+	  	if (xhr.readyState === 4 && xhr.status === 200) {
+           $("#loginStatusContainer").html(xhr.responseText);
+  		}
+	}
+
+	formData.append("username", $usernameElem.val());
+	formData.append("password", $passwordElem.val());
+
+	xhr.send(formData);
+});
+
+onresize = function() {
+	form.style.marginTop = (innerHeight - form.offsetHeight) / 5 + "px";
+}
+onresize();
+</script>
+</body>
+</html>

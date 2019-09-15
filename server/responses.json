@@ -1,0 +1,5 @@
+{
+	"invalidLogin": "<div class= \"well fadeIn red\" id=\"loginStatus\" onclick=\"this.classList.remove('fadeIn');this.classList.add('fadeOut');\">Either your username and password does not match or you are not registered</div>",
+	"registerAlreadyExists": "<div class= \"well fadeIn red\" id=\"loginStatus\" onclick=\"this.classList.remove('fadeIn');this.classList.add('fadeOut');\">An account already with that username already exists</div>",
+	"registerSuccess": "<div class= \"well fadeIn green\" id=\"loginStatus\" onclick=\"this.classList.remove('fadeIn');this.classList.add('fadeOut');\">Succesfully registered account</div>"
+}

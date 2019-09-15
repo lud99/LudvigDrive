@@ -1,0 +1,39 @@
+<html>
+<head>
+	<title>Ludvig Drive</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css">
+	<link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+	<div class="mainContainer">
+		<div id="sidenav" class="nav-open">
+			<!--<input id="closeNavBtn" class="btn" onclick="closeNav()" readonly value="×">-->
+			<input id="backBtn" class="btn btn-large" type="button" readonly value="Go Up">
+			<input id="uploadFileBtn" class="btn btn-large" type="button" readonly value="Upload File">
+			<input id="newFolderBtn" class="btn btn-large" type="button" readonly value="New Folder">
+			<input id="refreshBtn" class="btn btn-large" type="button" readonly value="Refresh">
+			<div id="logoutBtnContainer"><input id="logoutBtn" class="btn btn-large" type="button" readonly value="Logout"></div>
+		</div>
+		<input id="toggleSidenav" class="btn" onclick="toggleNav()" type="button" readonly value="☰"></input>
+		<div class="main mainSlideOut">
+			<div id="fileAccess" class="row">
+				<h3 id="folderName"></h3>
+				<ul class="list-group list-group-horizontal" id="files"></ul>
+			</div>
+		</div>
+
+		<form id="uploadFileForm" class="displayNone" method="POST" action="upload-file">
+			<input id="fileUploadInput" type="file" name="file">
+		</form>
+	</div>
+	<script src="/js/FileManager.js"></script>
+	<script src="/js/RequestManager.js"></script>
+	<script src="/js/EncryptDecrypt.js"></script>
+	<script src="/js/main.js"></script>
+</body>

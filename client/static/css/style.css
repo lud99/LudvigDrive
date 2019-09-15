@@ -1,0 +1,353 @@
+body {
+	background: #232323;
+	color: #fff;
+	font-family: sans-serif;
+	font-size: 1.5em;
+	text-align: center; 
+	margin: 0 auto;
+}
+
+.mainContainer {
+	margin: 0 auto;
+	width: 95%;	
+}
+
+#fileAccess {
+  	width: 100%;
+  	height: 80vh;
+	margin: auto;
+	margin-top: 2vh;
+}
+
+#fileStatus {
+	margin-top:10px;
+	color:#19b73c;
+	font-size:1em;
+	text-align:center;
+}
+
+#files {
+	height: auto;
+	margin-bottom: 2rem;
+	padding-top: 2rem;
+	padding-bottom: 5rem;
+	border-radius: 2rem;
+}
+
+#fileView {
+	border:none;
+	margin-top:10px;
+	width: 100%;
+	height: auto;
+	overflow-y: hidden;
+	background-color: #262626;
+	height: 87vh;
+	overflow-x: hidden;
+	padding-bottom: -1vh;
+	visibility: hidden;
+}
+
+/* Button */
+.btn {
+	width: auto;
+	max-width: 100px;
+	height: 1.5em;
+	padding-bottom: 1.75em;
+	background-color: #1e1e1e;
+	border: none;
+	text-align: center;
+	margin-top: 1rem;
+}
+.btn-large {
+	width: auto;
+	min-width: 125px;
+	max-width: 250px;
+	height: 3em;
+	font-size: 1.25em;
+	padding-bottom: 6px;
+	line-height: 1.5em;
+	background-color: #1e1e1e;
+	border: none;
+	text-align: center;
+	margin-top: 1rem;
+}
+
+/* Hidden */
+.hidden {
+	visibility: hidden;
+}
+
+/* Display None */
+.displayNone {
+	display: none;
+}
+
+/* Display Block */
+.displayBlock {
+	display: block;
+}
+
+.iconContainer {
+	text-align: center;
+	margin: 0 auto;
+}
+
+.folderIcon {
+	align-self: flex-end;
+	margin-top: 1rem;
+	display: block;
+}
+
+#buttonContainer {
+	margin-bottom: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#buttonContainer .btn {
+	margin-right: 2rem;
+}
+
+#toggleSideNav {
+	position: fixed;
+	z-index: 10;
+	left: 1rem;
+	margin-bottom: -5rem;
+}
+
+#backBtn {
+	margin-top: 5rem;
+}
+
+#closeNavBtn {
+	background: none; 
+	padding-top: 0rem;
+	padding-bottom:2rem;
+	font-size: 4rem;
+	text-align: left;
+}
+
+#uploadFileBtn {
+	margin-top: 5rem;
+}
+
+#newFolderBtn {
+	margin-top: 2rem;	
+}
+
+#refreshBtn {
+	margin-top: 5rem;
+}
+
+#logoutBtn {
+	position: relative;
+	margin-top: 3rem;
+}
+
+#folderName {
+	width: 100%;
+	margin: 0 auto;
+	margin-top: 5rem;
+	text-align:center;
+	overflow-wrap: break-word;
+	visibility: visible;
+}
+
+#emptyFolder {
+	text-align:center;
+	margin-top:30px;
+	font-size:1.2em;
+}
+
+.list-group-horizontal {
+	width: 100%;
+	height: 150px;
+	background-color:#212121;
+	border-color:#1e1e1e;
+	border-width: 2px;
+	display: inline-block;
+	margin-top:15px;
+	text-align: center;
+	overflow-y:auto;
+	overflow-wrap: break-word;
+	user-select: none;
+	visibility: visible;
+}
+
+.list-group-horizontal:last-child {
+	margin-bottom: 2rem;
+}
+
+.list-group-item {
+	background: none;
+	border: none;
+	/*background-color:#212121;
+	border-color:#1e1e1e;
+	border-width: 2px;
+	border-radius: 1rem;*/
+	display: inline-block;
+	margin-top:15px;
+	text-align: center;
+	overflow-y: none;
+	overflow-wrap: break-word;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	user-select: none;
+	cursor: pointer;
+	display: inline-block;
+
+	width: auto;
+	width: 175px;
+}
+
+.folder-item {
+	width: 75px;
+	height: 75px;
+	margin: 0 auto;
+}
+
+.file-name {
+	display: block;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	overflow-wrap: break-word;
+	width: 100%;
+}
+
+.file-item {
+	display: inline-block;
+	margin-top: 15px;
+	margin-left: 10px;
+}
+
+.file-item-img {
+	width: 50px;
+	height: 50px;
+	margin-bottom: 1.25rem;
+}
+
+.navSlideIn {
+   /* webkit-font-smoothing: subpixel-antialiased;
+    -webkit-animation-fill-mode: both;
+	-webkit-animation: navSlideIn 0.5s;
+	animation: navSlideIn 0.5s forwards;*/
+}
+
+.mainSlideIn {
+   	/*width: 0%;
+   	display: none;
+    webkit-font-smoothing: subpixel-antialiased;
+    -webkit-animation-fill-mode: both;
+	-webkit-animation: slideIn 0.5s;
+	animation: slideIn 0.5s;*/
+}
+
+.navSlideOut {
+    /*webkit-font-smoothing: subpixel-antialiased;
+    -webkit-animation-fill-mode: both;
+	-webkit-animation: navSlideOut 0.5s;
+	animation: navSlideOut 0.5s forwards;*/
+}
+
+.mainSlideOut {
+   /* webkit-font-smoothing: subpixel-antialiased;
+    -webkit-animation-fill-mode: both;
+	-webkit-animation: mainSlideOut 0.5s;
+	animation: mainSlideOut 0.5s forwards;*/
+}
+
+@keyframes navSlideOut {
+    /*from {
+        width: 0%;
+        max-width: 0px;
+    }
+    to {
+       	width: 75%;
+		max-width: 300px;
+    }*/
+}
+
+@keyframes navSlideIn {
+    /*from {
+    	width: 75%;
+    	max-width: 300px;
+    }
+    to {
+    	width: 0%;
+    	max-width: 0px;
+    }*/
+}
+
+@media only screen and (max-width: 600px) {
+	.list-group-item {
+		width: 100px !important;
+	}
+}
+
+@media only screen and (max-width: 300px) {
+	#sidenav {
+		width: 100% !important;
+		max-width: 400px !important;
+	}
+
+	#sidenav input {
+		display: block;
+		margin-left: 25% !important;
+		margin-right: auto;
+
+		width: 20%;
+	}
+
+	#backBtn {
+		margin-top: 0rem;
+	}
+}
+
+/* The sidebar menu */
+#sidenav {
+	height: 100%;
+	width: 75%;
+	/*max-width: 300px;*/
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #111;
+	overflow-x: hidden;
+	padding-top: 20px;
+	padding-bottom: 2rem;
+}
+
+/* The navigation menu links */
+#sidenav input {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-left: 30%;
+
+	width: 20%;
+}
+
+.nav-open {
+	/*width: 75%;*/
+}
+
+.nav-closed {
+	/*width: 0px !important;
+	max-width: 0px !important;*/
+}
+
+.nav-mobile {
+	/*width: 75% !important;*/
+	/*max-width: 200px !important;*/
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+	.sidenav {padding-top: 15px;}
+	.sidenav a {font-size: 18px;}
+}
+

@@ -1,0 +1,14 @@
+{
+	"name": "Ludvig-Drive",
+	"version": "1.0.0",
+	"main": "server.js",
+	"dependencies": {
+		"socket.io": "2.2.0",
+		"express": "*",
+		"cookie-parser": "*",
+		"formidable": "*"
+	},
+	"scripts": {
+		"start": "node server.js"
+	}
+}

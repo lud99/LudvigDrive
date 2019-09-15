@@ -1,0 +1,227 @@
+body {
+	margin: 0 auto;
+	font-size: 2rem;
+}
+
+label {
+    display: block;
+    text-align: center;
+}
+
+input {
+	display: inline-block;
+	margin: 0 auto;
+	margin-top: 0.5rem;
+	margin-bottom: 2rem;
+	height: 10px;
+}
+
+form {
+	margin: 0 auto;
+}
+
+/* Button */
+.btn {
+	width: auto;
+	max-width: 100px;
+	height: 1.5em;
+	padding-bottom: 1.75em;
+	background-color: #1e1e1e;
+	border: none;
+	text-align: center;
+	margin-top: 1rem;
+}
+
+.container {
+	display: block;
+	width: 100%;
+	max-width: 600px;
+	position: relative;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.button-container {
+	display: block;
+	display: grid;
+	grid-template-columns: repeat(2, 0.5fr);
+	grid-gap: 0rem;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.form-group {
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 0vh;
+	margin-bottom: 4rem;
+}
+
+#login {
+	margin: 0 auto;
+	padding: 0;
+}
+
+#username, #password {
+	width: 90%;
+	height: 6vh;
+	min-height: 34px;
+	max-height: 6rem;
+	font-size: 2.25rem;
+}
+
+#loginBtn, #registerBtn {
+	width: 25%;
+	min-width: 10rem;
+	height: 6vh;
+	min-height: 4rem;
+	max-height: 5rem;
+	font-size: 2rem;
+	margin-right: 2rem;
+	padding-bottom: 0.75rem;
+}
+
+#registerBtn {
+	margin-left: 2rem;
+}
+
+#loginStatusContainer {
+	width: 100%;
+	position: relative;
+}
+
+#loginStatus {
+	display: inline-block;
+	position: fixed;
+
+	font-size: 2rem;
+	width: auto;
+	max-width: 500px;
+	min-height: 6rem;
+	max-height: 20vh;
+	height: auto;
+	margin: 0 auto;
+	margin-bottom: 4rem;
+	overflow-y: auto;
+	overflow-x: hidden;
+	overflow-wrap: break-word;
+	color: #000000;
+	background-color: #d82b2b;
+	text-align: center;
+	font-weight: bold;
+
+	padding-top: 1rem;
+
+	overflow-y: hidden;
+
+	left: 25px;
+	right: 25px;
+	bottom: 0px;
+}
+
+.red {
+	background-color: #e3c1c1 !important;
+	border-color: #e3c1c1 !important;
+}
+
+.green {
+	background-color: #9feb98 !important;
+	border-color: #9feb98 !important;
+}
+
+.fadeIn {
+    opacity: 1;
+    webkit-font-smoothing: subpixel-antialiased;
+    -webkit-animation-fill-mode: both;
+	-webkit-animation: fadeIn 0.2s;
+	animation: fadeIn 0.2s;
+}
+
+.fadeOut {
+    opacity: 0;
+    webkit-font-smoothing: subpixel-antialiased;
+    -webkit-animation-fill-mode: both;
+	-webkit-animation: fadeOut 0.1s;
+	animation: fadeOut 0.1s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+       opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+       opacity: 0;
+    }
+}
+
+/* If between 400 and 500 pixels tall */
+@media all and (orientation:portrait) and (max-height: 550px) and (min-height: 400px) {
+	#loginStatus {
+		font-size: 3.5vh !important;
+	}
+}
+
+/* If taller than 550px */
+@media all and (orientation:portrait) and (min-height: 450px) {
+	#loginStatus {
+		font-size: 3vh !important;
+	}
+}
+
+/* If shorter than 400px */
+@media all and (orientation:portrait) and (max-height: 400px) {
+	#loginStatus {
+		font-size: 1.5rem !important;
+	}
+}
+
+/* If smaller than 400px */
+@media all and (max-height: 400px) and (max-width: 500px) and (min-width: 600px) {
+	#loginStatus {
+		font-size: 1.45rem !important;
+	}
+}
+
+@media screen and (orientation:landscape) and (max-height: 500px) and (max-width: 600px) {
+	#loginStatus {
+		font-size: 3.5vw !important;
+	}
+}
+
+@media screen and (orientation:landscape) and (max-height: 325px) {
+	#loginStatus {
+		font-size: 1.5rem !important;
+	}
+}
+
+/* If smaller than 600px */
+@media all and (min-height: 600px) {
+	input.form-control {
+	    font-size: 2.5rem !important
+	}
+}
+
+/* If wider than 800px */
+@media all and (min-height: 800px) {
+	input.form-control {
+	    font-size: 3rem !important
+	}
+}
+
+/* If smaller than 300px */
+@media all and (max-height: 300px) {
+	input.form-control {
+	    font-size: 2rem !important
+	}
+}
+
