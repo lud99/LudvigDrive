@@ -21,9 +21,9 @@
 			<form name="loginForm" id="loginForm" class="form-group" method="POST" action="/login">
 				<div id="loginStatusContainer"></div>
 				<div>Username</div>
-				<input name="username" type="text" class="form-control" id="username"autocomplete="off">
+				<input name="username" type="text" class="form-control" id="username" maxlength="30" autocomplete="off">
 				<div>Password</div>
-				<input name="password" type="password" class="form-control" id="password" autocomplete="off">
+				<input name="password" type="password" class="form-control" id="password" maxlength="30" autocomplete="off">
 				<div class="button-container">
 					<input type="submit" class="btn btn-primary" id="loginBtn" readonly value="Login">
 					<input type="button" class="btn btn-primary" id="registerBtn" readonly value="Register">
@@ -37,11 +37,14 @@ var form = document.getElementById("loginForm");
 
 $("#username").val(localStorage.getItem("username"));
 $('form[name=loginForm]').submit(function(event) {
-    event.preventDefault();
-    console.log(event);
+	event.preventDefault();
+	
+	//Dont send the form if the username or password is over 30 character long
+	if ($("#password").val().length > $("#password").attr("maxlength") || 
+		$("#username").val().length > $("#username").attr("maxlength")) return;
 
     var form = $(this);
-    var url = form.attr('action');
+    var url = form.attr('action') + location.pathname;
 
     $.ajax({
        type: "POST",
@@ -59,7 +62,12 @@ $("#registerBtn").click(function(event) {
 	const $usernameElem = $("#username");
 	const $passwordElem = $("#password");
 
+	//Dont send the form if there is no username or password
 	if (!$usernameElem.val() || !$passwordElem.val()) return;
+
+	//Dont send the form if the username or password is over 30 character long
+	if ($("#password").val().length > $("#password").attr("maxlength") || 
+	$("#username").val().length > $("#username").attr("maxlength")) return;
 
 	const xhr = new XMLHttpRequest;
 	const formData = new FormData();

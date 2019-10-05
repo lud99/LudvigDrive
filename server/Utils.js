@@ -1,3 +1,5 @@
+const chalk = require("chalk");
+
 class Utils 
 {
 	constructor()
@@ -28,13 +30,38 @@ class Utils
 		return session;
 	}
 
+	createApiSession(name = this.createId()) 
+	{
+		if (this.sessions.has(name)) {
+			throw new Error(`Session ${name} already exists`);
+		}
+
+		const session = new Session(name, true);
+		console.log("Creating Api", session);
+
+		this.sessions.set(name, session);
+
+		return session;
+	}
+
 	encode(string) { return encodeURIComponent(decodeURIComponent(string)); }
 
 	encodeArray(array) 
 	{ 
-		for (let i = 0; i < array.length; i++) array[i] = this.encode(array[i]);
+		let res = [];
 
-		return array;
+		array.forEach(item => res.push(this.encode(item)));
+
+		return res;
+	}
+
+	decodeArray(array) 
+	{ 
+		let res = [];
+
+		array.forEach(item => res.push(this.decode(item)));
+
+		return res;
 	}
 
 	decode(string) { return decodeURIComponent(string); }
@@ -57,7 +84,7 @@ class Utils
 		const id = this.createId();
 		const session = this.sessions.createSession(id);
 
-		console.log("The client does not have a valid id, generating one now", id);
+		console.log(chalk.redBright("The client does not have a valid id, generating one now ") + chalk.green("'" + id + "'"));
 		let options = {
 	        maxAge: 1000 * 60 * 15 //Expires after 15 minutes
 	    }
@@ -67,10 +94,23 @@ class Utils
 
 	    return id;
 	}
+	
+	getDirectory(req) 
+	{
+		if (!req.params.dir || !req.params.dir.isValidJSON()) return { err: "Invalid JSON" };
+		
+		const dirArray = JSON.parse(req.params.dir);
+
+		return {
+			array: dirArray,
+			string: dirArray.join("/"), 
+			encoded: this.encodeArray(dirArray).join("/")
+		}
+	}
 
 	redirect(res, url = "/", jsRedirect) 
 	{
-		console.log("Redirecting to '%s'", url);
+		console.log("Redirecting to %s", chalk.green("'" + url + "'"));
 
 		//Redirect with javascript
 		if (jsRedirect) res.send({newURL: url});

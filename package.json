@@ -1,14 +1,24 @@
 {
-	"name": "Ludvig-Drive",
+	"name": "ludvig-drive",
 	"version": "1.0.0",
-	"main": "server.js",
+	"devDependencies": {
+		"nodemon": "^1.19.3"
+	},
 	"dependencies": {
-		"socket.io": "2.2.0",
-		"express": "*",
+		"body-parser": "^1.19.0",
+		"chalk": "^2.4.2",
 		"cookie-parser": "*",
-		"formidable": "*"
+		"express": "*",
+		"file": "^0.2.2",
+		"find": "^0.3.0",
+		"formidable": "*",
+		"fs-extra": "^8.1.0",
+		"morgan": "^1.9.1",
+		"sanitize-filename": "^1.6.3",
+		"socket.io": "2.2.0"
 	},
 	"scripts": {
+		"dev": "nodemon",
 		"start": "node server.js"
 	}
 }

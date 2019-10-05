@@ -1,6 +1,6 @@
 class Session
 {
-	constructor(id)
+	constructor(id, apiData = null)
 	{
 		this.id = id;
 		this.clients = new Set;
@@ -9,6 +9,8 @@ class Session
 			isLoggedIn: false,
 			username: ""
 		};
+
+		this.apiData = apiData
 	}
 
 	join(client)

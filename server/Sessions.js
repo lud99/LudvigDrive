@@ -1,3 +1,5 @@
+const chalk = require('chalk');
+
 const Session = require('./session');
 
 class Sessions extends Map
@@ -41,7 +43,19 @@ class Sessions extends Map
 		}
 
 		const session = new Session(name);
-		console.log("Creating", session);
+
+		this.set(name, session);
+
+		return session;
+	}
+
+	createApiSession(name = this.utils.createId(), apiData) 
+	{
+		if (this.has(name)) {
+			throw new Error(`Session ${name} already exists`);
+		}
+
+		const session = new Session(name, apiData);
 
 		this.set(name, session);
 
@@ -76,6 +90,14 @@ class Sessions extends Map
 	{
 		this.get(id).state.isLoggedIn = true;
 		this.get(id).state.username = username;
+	}
+
+	logOut(id) 
+	{
+		const username = this.get(id).state.username;
+		this.delete(id);
+
+		console.log("Successfully logged out client %s", (username ? chalk.green("'" + username + "'") : "") + ", " + chalk.green("'" + id + "'"));
 	}
 }
 
