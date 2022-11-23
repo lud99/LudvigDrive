@@ -15,7 +15,7 @@
 		"fs-extra": "^8.1.0",
 		"morgan": "^1.9.1",
 		"sanitize-filename": "^1.6.3",
-		"socket.io": "2.2.0"
+		"socket.io": "2.5.0"
 	},
 	"scripts": {
 		"dev": "nodemon",
